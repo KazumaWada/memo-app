@@ -26,10 +26,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
