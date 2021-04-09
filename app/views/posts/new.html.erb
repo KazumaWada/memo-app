@@ -1,2 +1,14 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<%= form_with(model: @post, local: true) do |f| %>
+
+  <%# <%= f.label :title, class: 'mb-3' %> 
+  <%= f.text_field :title, class: 'form-control form-control-lg mt-4', placeholder: "title" %>
+
+  <div class="field">
+    <%= f.text_area :content, class: "form-control mt-4", id: "exampleFormControlTextarea1" %>
+  </div>
+
+<div class="text-center">
+  <%= f.submit "投稿する", class: "btn btn-warning mt-4 text-white", data: { confirm: "この内容で投稿してよろしいですか？" , disable_with: "投稿しています..."} %>
+</div>
+<% end %>
+
