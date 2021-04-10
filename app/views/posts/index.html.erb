@@ -1,19 +1,20 @@
-<div class='container'>
-<div class='row'>
-
-<div class='col-md-4'>
-<%= image_tag 'go.jpeg' %>
-</div>
-
-<div class='col-md-8'>
-<div class='text-center mr-4'>
+<div class='text-center dark-link'>
 <% @posts.each do |post| %>
-<%= link_to post_path(post) do %>
-<%= post.title%> | <%= post.content %><br>
+<%= link_to post_path(post),class: 'text-dark' do %>
+<%= post.title %> | <%= post.content.truncate(5) %> 
+<%= link_to edit_post_path(post) do %>
+<i class="fas fa-edit"></i>
+<% end %> 
+<%= link_to post_path(post),  method: :delete, data: { confirm: "You sure?" } do %>
+<i class="far fa-trash-alt"></i>
+<% end %>
+</div>
+<br>
 <% end %>
 <% end %>
-</div>
-</div>
-</div>
-</div>
+
+
+<%# 次のプラン。cardにして、画像投稿のところを、強制的に全部goopherに設定することにする。 %>
+
+
 
