@@ -1,20 +1,42 @@
-<div class='text-center dark-link'>
+<div class='container'>
+<div class='row'>
+<div class='col-md-8 offset-2 mt-4'>
+
 <% @posts.each do |post| %>
+
+
+
+<div class="text-center each-post">
 <%= link_to post_path(post),class: 'text-dark' do %>
-<%= post.title %> | <%= post.content.truncate(5) %> 
+<h5 class="t">
+<%= post.title %> | 
+<%= post.content.truncate(10) %>
+<small class="text-muted"><%= time_ago_in_words(post.created_at) %>ago</small>
 <%= link_to edit_post_path(post) do %>
 <i class="fas fa-edit"></i>
 <% end %> 
 <%= link_to post_path(post),  method: :delete, data: { confirm: "You sure?" } do %>
 <i class="far fa-trash-alt"></i>
 <% end %>
-</div>
+
+
+</h5>
+
 <br>
-<% end %>
-<% end %>
+<% end %><%# link_to %>
+</div><%# text-left %>
+
+<% end %><%# each %>
+
+</div>
+<%# col %>
 
 
-<%# 次のプラン。cardにして、画像投稿のところを、強制的に全部goopherに設定することにする。 %>
 
-
-
+</div>
+</div>
+<%# <style>
+.each-post{
+    background-color: black;
+}
+</style> %>

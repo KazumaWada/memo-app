@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+    12.times do 
+Post.create(
+    title: 'タイトル',
+    content: 'コンテンツ',
+    created_at: (rand*10).days.ago
+)
+end
