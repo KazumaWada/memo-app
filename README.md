@@ -1,55 +1,38 @@
-# README
+# 目標
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+無料でやりたい。
 
-Things you may want to cover:
+# 目的
 
-- Ruby version
+金, 利益が全て自分にくるサイトを作りたい。愛着。
 
-- System dependencies
+# どういうサイトにしたいか。
 
-- Configuration
+全てを詰め込む。ワーホリ, エンジニア, 語学, 読んだ本 日本語、英語関係なく etc..
+qiita, hatena も取り込む??
+↓
+そしたら、バックアップが取れるような設計にしたい。
 
-- Database creation
+ググる[ブログ 投稿 admin rails]
+わかりたいこと。
+/admin から直接ブログを投稿したら、記事データがしっかり github に残るのか？
+= form_with でブラウザから送信したら、レポジトリに残るのか?
 
-- Database initialization
+## バックアッププラン
 
-- How to run the test suite
+残らなかった時のことを考えて、
+->ブログ記事を投稿する前に下書きを書いて(レポジトリを作って、そこにのまーくだうんで書いて)投稿する。
+md でブログ記事専用のレポジトリに書いて push してから、admin に投稿する。
 
-- Services (job queues, cache servers, search engines, etc.)
+# DB 設計
 
-- Deployment instructions
+### table
 
-- ...
+- admin
 
-<div class='container'>
-<div class='row'>
+  - name
+  - password
 
-<% @posts.each do |post| %>
+- ## post
 
-<div class='col-md-4 mt-4'>
-<%= link_to post_path(post),class: 'text-dark' do %>
-<div class="card" style="width: 20rem;">
-<%# image_tag 'go.jpeg', class: "card-img-top" %>
-  <div class="card-body">
-    <h5 class="card-title"><%= post.title %></h5>
-    <p class="card-text"><%= post.content.truncate(10) %></p>
-    <p class="card-text">
-      <%= link_to edit_post_path(post) do %>
-<i class="fas fa-edit"></i>
-<% end %> 
-<%= link_to post_path(post),  method: :delete, data: { confirm: "You sure?" } do %>
-<i class="far fa-trash-alt"></i>
-<% end %>
-      </p>
-    <p class="card-text"><small class="text-muted"><%= time_ago_in_words(post.created_at) %>ago</small></p>
-  </div>
-</div>
-<% end %><%# link_to %>
-</div><%# col-md-4 %>
-
-<% end %>
-
-</div>
-</div>
+# デザイン
