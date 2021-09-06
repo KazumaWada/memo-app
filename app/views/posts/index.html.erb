@@ -11,7 +11,9 @@
 <h5 class="t">
 <%= post.title %> | 
 <%= post.content.truncate(10) %>
-<small class="text-muted"><%= time_ago_in_words(post.created_at) %>ago</small>
+<small class="text-muted">
+<%# <%= time_ago_in_words(post.created_at) %> %>
+ago</small>
 <%= link_to edit_post_path(post) do %>
 <i class="fas fa-edit"></i>
 <% end %> 
