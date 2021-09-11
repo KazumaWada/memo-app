@@ -1,12 +1,39 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled">Disabled</a>
+  </li>
+</ul>
+
+
 <div class='text-center mr-4'>
 <%= image_tag 'go.jpeg' %>
-<h1>Easy to find your latest memo!</h1>
-</div>
+<h1>Well organized memo!</h1>
 <div class='text-center mr-4'>
 <%= link_to new_post_path do %>
 <i class="fas fa-pen-square fa-3x"></i>
 <% end %>
-<%= link_to root_path do %>
-<i class="fas fa-home fa-3x"></i>
-<% end %>
+</div>
+<p>#タグ #タグ #タグ #タグ #タグ</p>
+<div>
+
+
+<%# pinned %>
+<div class="card" style="width: 18rem;">
+<h3>Pinned</h3>
+  <%= image_tag 'green.png', class: "card-img-top" %>
+  <div class="card-body">
+    <p class="card-text">Something</p>
+  </div>
+</div>
+</div>
+
 </div>

@@ -1,44 +1,29 @@
 <div class='container'>
 <div class='row'>
-<div class='col-md-8 offset-2 mt-4'>
 
 <% @posts.each do |post| %>
 
+<div class='col-md-2'>
 
-
-<div class="text-center each-post">
 <%= link_to post_path(post),class: 'text-dark' do %>
-<h5 class="t">
-<%= post.title %> | 
-<%= post.content.truncate(10) %>
-<small class="text-muted">
-<%# <%= time_ago_in_words(post.created_at) %> %>
-ago</small>
-<%= link_to edit_post_path(post) do %>
-<i class="fas fa-edit"></i>
-<% end %> 
-<%= link_to post_path(post),  method: :delete, data: { confirm: "You sure?" } do %>
-<i class="far fa-trash-alt"></i>
-<% end %>
 
+<div class="card" style="width: 13rem;">
+  <%= image_tag 'green.png', class: "card-img-top" %>
+  <div class="card-body">
+    <p class="card-text"><%= post.title %></p>
+    <p class="card-text"><%= post.content.truncate(10) %></p>
+    <p>#タグ</p>
+    <%= link_to post_path(post),  method: :delete, data: { confirm: "You sure?" } do %>
+    <i class="far fa-trash-alt"></i>
+    <% end %>
+  </div>
+</div>
 
-</h5>
-
-<br>
-<% end %><%# link_to %>
-</div><%# text-left %>
+<% end %><%# link-to %>
+</div><%# col-2 %>
 
 <% end %><%# each %>
 
 </div>
-<%# col %>
-
-
-
 </div>
-</div>
-<%# <style>
-.each-post{
-    background-color: black;
-}
-</style> %>
+
